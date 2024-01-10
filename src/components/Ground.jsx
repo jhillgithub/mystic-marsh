@@ -11,8 +11,8 @@ export function Ground(props) {
   return (
     <group {...props} dispose={null}>
       <mesh
-        name="Ground"
-        geometry={nodes.Ground.geometry}
+        name="Landscape"
+        geometry={nodes.Landscape.geometry}
         material={materials.ground}
         scale={100}
       />
