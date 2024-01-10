@@ -1,6 +1,7 @@
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
+import Experience from "./Experience";
 
 const App = () => {
   return (
@@ -11,11 +12,7 @@ const App = () => {
         {/* <FlyControls movementSpeed={10} /> */}
         <OrbitControls />
         <Suspense fallback={null}>
-          <mesh>
-            <boxGeometry args={[1, 1, 1]} />
-            <meshBasicMaterial color="#00ffff" />
-          </mesh>
-          {/* <Experience /> */}
+          <Experience />
         </Suspense>
       </Canvas>
     </>
