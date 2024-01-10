@@ -6,6 +6,7 @@ import {
 import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useEffect } from "react";
 import Experience from "./Experience";
+import { SphereEnvironment } from "./SphereEnvironment";
 
 // function CameraRig() {
 //   const { camera } = useThree();
@@ -21,14 +22,15 @@ const App = () => {
     <>
       <Canvas>
         <color attach="background" args={["#eee"]} />
-        <PerspectiveCamera makeDefault position={[0, 20, 100]} />
+        <PerspectiveCamera makeDefault position={[0, 40, 90]} />
 
         {/* <CameraRig /> */}
         <OrbitControls />
         <Suspense fallback={null}>
           <Experience />
         </Suspense>
-        <Environment preset="city" />
+        <SphereEnvironment />
+        <Environment background={false} files={"textures/envmap.hdr"} />
       </Canvas>
     </>
   );
