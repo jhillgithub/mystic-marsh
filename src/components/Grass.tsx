@@ -27,6 +27,9 @@ const Grass = () => {
     });
   }, [grassTexture]);
 
+  /** For simplicity, divide the shuffled positions array by the
+   * number of meshes and give the remainder to the last mesh.
+   */
   const grassWithPositions = useMemo(() => {
     const numPositionsPerObject = Math.floor(positions.length / grass.length);
     const remainder = positions.length % grass.length;
