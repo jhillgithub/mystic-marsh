@@ -13,7 +13,7 @@ import { SphereEnvironment } from "./SphereEnvironment";
 const App = () => {
   return (
     <>
-      <Canvas shadows>
+      <Canvas shadows dpr={[1, 1.5]}>
         <color attach="background" args={["#22424"]} />
 
         <SoftShadows size={80} samples={10} />
