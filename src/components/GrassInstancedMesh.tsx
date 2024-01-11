@@ -1,11 +1,11 @@
-import type { InstancedMeshProps } from "@react-three/fiber";
+import { useFrame, type InstancedMeshProps } from "@react-three/fiber";
 import {
   useLayoutEffect,
   useMemo,
   useRef,
   type PropsWithChildren,
 } from "react";
-import { randomBetween } from "src/lib/utils";
+import { calculateWindRotation, randomBetween } from "src/lib/utils";
 import { BufferGeometry, Material, Object3D, type InstancedMesh } from "three";
 
 type Grass = {
@@ -43,6 +43,26 @@ export const GrassInstancedMesh = ({
     }
     // ref.current.rotation.x = -Math.PI;
   });
+
+  useFrame(({ clock }) => {
+    if (!grassRef.current) return;
+    const elapsedTime = clock.getElapsedTime();
+
+    for (let i = 0; i < grassRef.current.count; i++) {
+      grassRef.current.getMatrixAt(i, dummy.matrix);
+
+      let rotation = calculateWindRotation(i, elapsedTime);
+      dummy.rotation.setFromRotationMatrix(dummy.matrix);
+      dummy.position.setFromMatrixPosition(dummy.matrix);
+      dummy.scale.setFromMatrixScale(dummy.matrix);
+      dummy.rotation.y = rotation;
+
+      dummy.updateMatrix();
+      grassRef.current.setMatrixAt(i, dummy.matrix);
+    }
+    grassRef.current.instanceMatrix.needsUpdate = true;
+  });
+
   return (
     <instancedMesh
       ref={grassRef}

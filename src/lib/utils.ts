@@ -1,3 +1,6 @@
+import { Noise } from "noisejs";
+const noise = new Noise(Math.random());
+
 export const degreesToRadians = (degrees: number) => degrees * (Math.PI / 180);
 
 export const randomBetween = (min: number, max: number) =>
@@ -21,3 +24,11 @@ export class LCG {
     return this.seed / this.modulus;
   }
 }
+
+export const calculateWindRotation = (index: number, time: number) => {
+  const timeFactor = 0.05;
+  const scaleFactor = 0.2;
+  const noiseValue = noise.simplex2(index, time * timeFactor);
+  const rotation = noiseValue * scaleFactor;
+  return rotation;
+};
