@@ -7,3 +7,8 @@ Author: EmreAlkan (https://sketchfab.com/Anadolubebesi)
 License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-models/willow-tree-2378d616b9da4ba39b5ccbe157e22e86
 Title: Willow Tree
+
+Author: DigitalLife3D (https://sketchfab.com/DigitalLife3D)
+License: CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+Source: https://sketchfab.com/3d-models/model-64a-eastern-painted-turtle-154214dec4c14e959e975aa8d17b1578
+Title: Model 64A - Eastern Painted Turtle

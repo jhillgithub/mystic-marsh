@@ -6,6 +6,7 @@ import { Ground } from "./Ground";
 import { Trunk } from "./Trunk";
 import { Water } from "./Water";
 import { Willow } from "./Willow";
+import { Turtle } from "./Turtle";
 
 const Experience = () => {
   return (
@@ -19,6 +20,12 @@ const Experience = () => {
         rotation={[0, Math.PI / 4, Math.PI / 3]}
       />
       <Trunk scale={50} position={[0, 10, -100]} />
+      <Turtle
+        scale={50}
+        rotation={[0, Math.PI / 2, 0]}
+        position={[16, 18, -100]}
+        playAnimation={true}
+      />
       <Willow scale={10} position={[65, 0, 110]} />
       {
         /** big fish */
