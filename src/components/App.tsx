@@ -22,7 +22,9 @@ const App = () => {
         <PerspectiveCamera makeDefault position={[-5, 30, 45]} />
         <OrbitControls
           enablePan={false}
-          enableZoom={false}
+          enableZoom={true}
+          minDistance={1}
+          maxDistance={48}
           minPolarAngle={0}
           maxPolarAngle={Math.PI / 2}
           target={[0, 15, 0]}
