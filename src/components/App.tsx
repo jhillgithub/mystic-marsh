@@ -20,7 +20,13 @@ const App = () => {
         {/* <fog attach="fog" color="#3C4D03" near={150} far={200} /> */}
 
         <PerspectiveCamera makeDefault position={[-5, 30, 45]} />
-        <OrbitControls target={[0, 15, 0]} />
+        <OrbitControls
+          enablePan={false}
+          enableZoom={false}
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI / 2}
+          target={[0, 15, 0]}
+        />
         <Suspense fallback={null}>
           <Experience />
           <BakeShadows />
