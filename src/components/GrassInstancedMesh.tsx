@@ -34,7 +34,7 @@ export const GrassInstancedMesh = ({
     for (let i = 0; i < positions.length; i++) {
       const [x, y, z] = positions[i];
       dummy.position.set(x, z, -y);
-      dummy.rotation.set(0, Math.random() * Math.PI, 0);
+      dummy.rotation.set(0, (Math.random() * 360 * Math.PI) / 180, 0);
 
       const scale = randomBetween(0.4, 0.9);
       dummy.scale.set(scale, scale, scale);
@@ -55,7 +55,7 @@ export const GrassInstancedMesh = ({
       dummy.rotation.setFromRotationMatrix(dummy.matrix);
       dummy.position.setFromMatrixPosition(dummy.matrix);
       dummy.scale.setFromMatrixScale(dummy.matrix);
-      dummy.rotation.y = rotation;
+      dummy.rotation.set(rotation.x, rotation.y, rotation.z);
 
       dummy.updateMatrix();
       grassRef.current.setMatrixAt(i, dummy.matrix);

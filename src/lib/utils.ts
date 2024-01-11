@@ -1,4 +1,5 @@
 import { Noise } from "noisejs";
+import { Vector3 } from "three";
 const noise = new Noise(Math.random());
 
 export const degreesToRadians = (degrees: number) => degrees * (Math.PI / 180);
@@ -26,9 +27,16 @@ export class LCG {
 }
 
 export const calculateWindRotation = (index: number, time: number) => {
-  const timeFactor = 0.05;
+  const timeFactor = 0.025;
   const scaleFactor = 0.2;
-  const noiseValue = noise.simplex2(index, time * timeFactor);
-  const rotation = noiseValue * scaleFactor;
-  return rotation;
+
+  const noiseValueY = noise.simplex2(index, time * timeFactor * 0.1);
+  const noiseValueX = noise.simplex2(index + 1000, time * timeFactor);
+  const noiseValueZ = noise.simplex2(index + 2000, time * timeFactor);
+
+  const rotationY = noiseValueY * scaleFactor;
+  const rotationX = noiseValueX * scaleFactor;
+  const rotationZ = noiseValueZ * scaleFactor;
+
+  return new Vector3(rotationX, rotationY, rotationZ);
 };
