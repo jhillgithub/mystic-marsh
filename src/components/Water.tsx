@@ -1,5 +1,5 @@
 import { MeshTransmissionMaterial } from "@react-three/drei";
-import { useControls } from "leva";
+import { Leva, useControls } from "leva";
 import { useRef } from "react";
 import { Color, type Mesh } from "three";
 
@@ -39,6 +39,7 @@ export const Water = () => {
 
   return (
     <>
+      <Leva hidden />
       <mesh ref={ref} position={[0, 0, 0]}>
         <boxGeometry args={[200, 20, 200]} />
         <MeshTransmissionMaterial
