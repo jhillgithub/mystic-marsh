@@ -27,7 +27,7 @@ const App = () => {
           maxDistance={48}
           minPolarAngle={0}
           maxPolarAngle={Math.PI / 2}
-          target={[0, 15, 0]}
+          target={[0, 20, 0]}
         />
         <Suspense fallback={null}>
           <Experience />

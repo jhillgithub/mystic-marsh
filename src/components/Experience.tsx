@@ -7,10 +7,12 @@ import { Trunk } from "./Trunk";
 import { Water } from "./Water";
 import { Willow } from "./Willow";
 import { Turtle } from "./Turtle";
+import { Clouds } from "./Clouds";
 
 const Experience = () => {
   return (
     <group rotation={[0, 0, 0]}>
+      <Clouds />
       <Ground />
       <Grass />
       <Water />
