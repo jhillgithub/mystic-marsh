@@ -1,3 +1,5 @@
+export const degreesToRadians = (degrees: number) => degrees * (Math.PI / 180);
+
 export const randomBetween = (min: number, max: number) =>
   Math.random() * (max - min) + min;
 
