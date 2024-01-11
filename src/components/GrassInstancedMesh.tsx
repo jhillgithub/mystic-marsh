@@ -6,7 +6,7 @@ import {
   type PropsWithChildren,
 } from "react";
 import { randomBetween } from "src/lib/utils";
-import { Object3D, type InstancedMesh, BufferGeometry, Material } from "three";
+import { BufferGeometry, Material, Object3D, type InstancedMesh } from "three";
 
 type Grass = {
   name: string;

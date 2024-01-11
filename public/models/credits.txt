@@ -1,2 +1,9 @@
-"Model 70A - Bluegill" (https://skfb.ly/6TSAH) by DigitalLife3D is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/).
+Author: DigitalLife3D (https://sketchfab.com/DigitalLife3D)
+License: CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+Source: https://sketchfab.com/3d-models/model-67a-largemouth-bass-e60c457636b640629747c19feac4906c
+Title: Model 67A - Largemouth Bass
 
+Author: EmreAlkan (https://sketchfab.com/Anadolubebesi)
+License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+Source: https://sketchfab.com/3d-models/willow-tree-2378d616b9da4ba39b5ccbe157e22e86
+Title: Willow Tree

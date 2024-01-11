@@ -3,7 +3,7 @@ import { useControls } from "leva";
 import { useLayoutEffect, useRef } from "react";
 import { Color, type Mesh } from "three";
 
-const Water = () => {
+export const Water = () => {
   const ref = useRef<Mesh>(null);
   const config = useControls({
     meshPhysicalMaterial: false,
@@ -47,5 +47,3 @@ const Water = () => {
     </mesh>
   );
 };
-
-export default Water;

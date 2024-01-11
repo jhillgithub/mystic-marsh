@@ -5,7 +5,7 @@ import { useMemo, useRef } from "react";
 import { InstancedMesh, MeshStandardMaterial, RepeatWrapping } from "three";
 import { GrassInstancedMesh } from "./GrassInstancedMesh";
 
-const Grass = () => {
+export const Grass = () => {
   const ref = useRef<InstancedMesh>(null);
   const grass = useGrassMeshes();
   const positions = usePositions();
@@ -55,5 +55,3 @@ const Grass = () => {
     </>
   );
 };
-
-export default Grass;
