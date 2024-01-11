@@ -12,13 +12,13 @@ const Grass = () => {
 
   const grassTexture = useTexture("textures/grass_medium_01_diff_1k.jpg");
   const grassMaterial = useMemo(() => {
-    const scale = 0.25;
+    const scale = 6.5;
     grassTexture.wrapS = RepeatWrapping;
     grassTexture.wrapT = RepeatWrapping;
     grassTexture.repeat.set(1 / scale, 1 / scale);
     return new MeshStandardMaterial({
       map: grassTexture,
-      emissiveIntensity: 0.75,
+      emissiveIntensity: 0.25,
       roughness: 1,
       metalness: 0.5,
       color: "#909090",
