@@ -11,6 +11,7 @@ import Experience from "./Experience";
 import { SphereEnvironment } from "./SphereEnvironment";
 import { Stats } from "@react-three/drei";
 import { LoadingScreen } from "./LoadingScreen";
+import { ResonsiveCamera } from "./ResonsiveCamera";
 const App = () => {
   return (
     <>
@@ -21,16 +22,7 @@ const App = () => {
         <SoftShadows size={80} samples={10} />
         {/* <fog attach="fog" color="#3C4D03" near={150} far={200} /> */}
 
-        <PerspectiveCamera makeDefault position={[-5, 30, 45]} />
-        <OrbitControls
-          enablePan={false}
-          enableZoom={true}
-          minDistance={1}
-          maxDistance={48}
-          minPolarAngle={0}
-          maxPolarAngle={Math.PI / 2}
-          target={[0, 20, 0]}
-        />
+        <ResonsiveCamera />
         <Suspense fallback={null}>
           <Experience />
           <BakeShadows />
