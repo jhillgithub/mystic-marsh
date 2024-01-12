@@ -1,7 +1,12 @@
 import { MeshTransmissionMaterial } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import { Leva, useControls } from "leva";
 import { useLayoutEffect, useRef } from "react";
 import { Color, type Mesh } from "three";
+
+const size = 200;
+const waveAmplitude = 0.2;
+const waveFrequency = 0.05;
 
 export const Water = () => {
   const ref = useRef<Mesh>(null);
@@ -38,20 +43,22 @@ export const Water = () => {
     { collapsed: true }
   );
 
-  useLayoutEffect(() => {
+  useFrame(({ clock }) => {
     if (!ref.current) return;
-    const size = 200;
     const mesh = ref.current;
     const geometry = mesh.geometry;
     for (let h = 0; h < size; h++) {
       for (let w = 0; w < size; w++) {
         let verticesIndex = h * size + w;
-        geometry.attributes.position.setZ(verticesIndex, 0.2 * Math.random());
+        const z =
+          waveAmplitude * Math.sin(clock.elapsedTime + (h + w) * waveFrequency);
+
+        geometry.attributes.position.setZ(verticesIndex, z);
       }
     }
     geometry.attributes.position.needsUpdate = true;
     geometry.computeVertexNormals();
-  }, []);
+  });
 
   return (
     <>
