@@ -82,8 +82,6 @@ The project includes experiments with:
 
 [![Drei][Drei]][Drei-url]
 
-[![React Postprocessing][Reactpostprocessing]][ReactPostprocessing-url]
-
 [![Leva][Leva]][Leva-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -151,7 +149,5 @@ See the [open issues](https://github.com/jhillgithub/mystic-marsh/issues) for a 
 [R3F-url]: https://github.com/pmndrs/react-three-fiber
 [Drei]: https://img.shields.io/badge/drei-000000?style=for-the-badge&logo=drei&logoColor=white
 [Drei-url]: https://github.com/pmndrs/drei
-[Reactpostprocessing]: https://img.shields.io/badge/reactpostprocessing-000000?style=for-the-badge&logo=reactpostprocessing&logoColor=white
-[ReactPostprocessing-url]: https://github.com/pmndrs/react-postprocessing
 [Leva]: https://img.shields.io/badge/leva-000000?style=for-the-badge&logo=leva&logoColor=white
 [Leva-url]: https://github.com/pmndrs/leva
