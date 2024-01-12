@@ -7,15 +7,15 @@ export const ResonsiveCamera = () => {
 
   return (
     <>
-      <PerspectiveCamera makeDefault position={[-5, 40, 45]} />
+      <PerspectiveCamera makeDefault position={[-5, 30, 45]} />
       <OrbitControls
         enablePan={false}
         enableZoom={true}
         minDistance={1}
         maxDistance={48}
         minPolarAngle={0}
-        maxPolarAngle={degreesToRadians(102)}
-        target={[0, 30, 0]}
+        maxPolarAngle={degreesToRadians(95)}
+        target={[0, 20, 0]}
       />
     </>
   );
