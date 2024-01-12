@@ -10,9 +10,11 @@ import { Suspense } from "react";
 import Experience from "./Experience";
 import { SphereEnvironment } from "./SphereEnvironment";
 import { Stats } from "@react-three/drei";
+import { LoadingScreen } from "./LoadingScreen";
 const App = () => {
   return (
     <>
+      <LoadingScreen />
       <Canvas shadows dpr={[1, 1.5]}>
         <color attach="background" args={["#22424"]} />
 
@@ -39,7 +41,7 @@ const App = () => {
           background={false}
           files={"textures/envmap.hdr"}
         />
-        <Stats />
+        {/* <Stats /> */}
       </Canvas>
     </>
   );
