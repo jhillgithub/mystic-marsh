@@ -25,7 +25,7 @@ export const GrassInstancedMesh = ({
   children,
   ...props
 }: GrassInstancedMeshProps) => {
-  const { name, geometry, material, positions } = grass;
+  const { positions } = grass;
   const grassRef = useRef<InstancedMesh>(null);
   const dummy = useMemo(() => new Object3D(), []);
 

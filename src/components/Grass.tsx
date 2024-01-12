@@ -6,7 +6,6 @@ import { InstancedMesh, MeshStandardMaterial, RepeatWrapping } from "three";
 import { GrassInstancedMesh } from "./GrassInstancedMesh";
 
 export const Grass = () => {
-  const ref = useRef<InstancedMesh>(null);
   const grass = useGrassMeshes();
   const positions = usePositions();
 

@@ -7,11 +7,9 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame, useGraph } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import { calculateWindRotation } from "src/lib/utils";
-import { Euler } from "three";
 import { SkeletonUtils } from "three-stdlib";
 
 export function Willow(props) {
-  // const { scene, nodes, materials } = useGLTF("/models/willow.glb");
   const ref = useRef();
   const { scene, materials } = useGLTF("/models/willow.glb");
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);

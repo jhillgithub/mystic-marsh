@@ -1,4 +1,4 @@
-import { Noise } from "noisejs";
+import Noise from "noisejs";
 import { Vector3 } from "three";
 const noise = new Noise(Math.random());
 

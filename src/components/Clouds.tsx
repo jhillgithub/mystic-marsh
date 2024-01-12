@@ -5,7 +5,6 @@ import { AmbientLight, Group, MeshBasicMaterial } from "three";
 
 export const Clouds = () => {
   const clouds = useRef<Group>(null);
-  const light = useRef<AmbientLight>(null);
   const { color, x, y, z, ...config } = useControls({
     // seed: { value: 1, min: 1, max: 100, step: 1 },
     // segments: { value: 1, min: 1, max: 80, step: 1 },
