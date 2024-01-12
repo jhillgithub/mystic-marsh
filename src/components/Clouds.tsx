@@ -26,14 +26,14 @@ export const Clouds = () => {
     <>
       <group ref={clouds} position={[0, 350, -500]}>
         <DreiClouds material={MeshBasicMaterial}>
-          <Cloud
+          {/* <Cloud
             {...config}
             bounds={[x, y, z]}
             // color="#eed0d0"
             // seed={2}
           >
-            {/* <pointLight intensity={15000} position={[0, 0, 100]} color="blue" /> */}
-          </Cloud>
+            <pointLight intensity={15000} position={[0, 0, 100]} color="blue" />
+          </Cloud> */}
           <Cloud
             {...config}
             concentrate="outside"
