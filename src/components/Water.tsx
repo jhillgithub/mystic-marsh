@@ -1,6 +1,6 @@
 import { MeshTransmissionMaterial } from "@react-three/drei";
 import { Leva, useControls } from "leva";
-import { useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { Color, type Mesh } from "three";
 
 export const Water = () => {
@@ -27,7 +27,8 @@ export const Water = () => {
       anisotropy: { value: 0.1, min: 0, max: 1, step: 0.01 },
       distortion: { value: 0.75, min: 0, max: 1, step: 0.01 },
       distortionScale: { value: 0.01, min: 0.01, max: 1, step: 0.01 },
-      temporalDistortion: { value: 0.05, min: 0, max: 1, step: 0.01 },
+      temporalDistortion: { value: 0.1, min: 0, max: 1, step: 0.01 },
+      // temporalDistortion: { value: 0.05, min: 0, max: 1, step: 0.01 },
       clearcoat: { value: 0.1, min: 0, max: 1 },
       attenuationDistance: { value: 0.13, min: 0, max: 10, step: 0.01 },
       attenuationColor: "#ffffff",
@@ -37,12 +38,30 @@ export const Water = () => {
     { collapsed: true }
   );
 
+  useLayoutEffect(() => {
+    if (!ref.current) return;
+    const size = 200;
+    const mesh = ref.current;
+    const geometry = mesh.geometry;
+    for (let h = 0; h < size; h++) {
+      for (let w = 0; w < size; w++) {
+        let verticesIndex = h * size + w;
+        geometry.attributes.position.setZ(verticesIndex, 0.2 * Math.random());
+      }
+    }
+    geometry.attributes.position.needsUpdate = true;
+    geometry.computeVertexNormals();
+  }, []);
+
   return (
     <>
-      <Leva hidden />
-      <mesh ref={ref} position={[0, 0, 0]}>
-        <boxGeometry args={[200, 20, 200]} />
+      {/* <Leva hidden /> */}
+      <mesh ref={ref} rotation={[-Math.PI / 2, 0, 0]} position={[0, 10, 0]}>
+        {/* <boxGeometry args={[200, 20, 200]} /> */}
+        <planeGeometry args={[200, 200, 50, 50]} />
+
         <MeshTransmissionMaterial
+          // wireframe
           background={new Color(config.bg)}
           {...config}
         />
