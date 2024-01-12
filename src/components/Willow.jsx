@@ -4,10 +4,18 @@ Command: npx gltfjsx@6.2.16 public/models/willow.glb -o src/components/Willow.js
 */
 
 import { useGLTF } from "@react-three/drei";
-import { useMemo } from "react";
+import { useFrame, useGraph } from "@react-three/fiber";
+import { useMemo, useRef } from "react";
+import { calculateWindRotation } from "src/lib/utils";
+import { Euler } from "three";
+import { SkeletonUtils } from "three-stdlib";
 
 export function Willow(props) {
-  const { scene, nodes, materials } = useGLTF("/models/willow.glb");
+  // const { scene, nodes, materials } = useGLTF("/models/willow.glb");
+  const ref = useRef();
+  const { scene, materials } = useGLTF("/models/willow.glb");
+  const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
+  const { nodes } = useGraph(clone);
   useMemo(() => {
     scene.traverse((object) => {
       if (object.isMesh) {
@@ -16,10 +24,32 @@ export function Willow(props) {
       }
     });
   }, [scene]);
+
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const elapsedTime = clock.getElapsedTime();
+
+    ref.current.traverse((object) => {
+      if (object.isMesh && object.name.includes("leaves")) {
+        let rotation = calculateWindRotation(object.id, elapsedTime);
+        object.rotation.set(
+          0.1 * rotation.x,
+          0.1 * rotation.y,
+          0.1 * rotation.z
+        );
+      }
+    });
+  });
+
   return (
     <group {...props} dispose={null}>
       <group name="a29d8c7d8d40462d8808967e772b0766fbx" scale={0.01}>
-        <group name="tree" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+        <group
+          ref={ref}
+          name="tree"
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={100}
+        >
           <mesh
             name="tree_Malzeme010_0"
             geometry={nodes.tree_Malzeme010_0.geometry}
