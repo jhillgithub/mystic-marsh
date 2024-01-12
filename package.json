@@ -19,7 +19,6 @@
     "@types/react-dom": "^18.2.18",
     "astro": "^4.1.1",
     "leva": "^0.9.35",
-    "noisejs": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.4.1",
@@ -28,7 +27,6 @@
     "typescript": "^5.3.3"
   },
   "devDependencies": {
-    "@types/noisejs": "^0.0.31",
     "@types/three": "^0.160.0"
   }
 }

@@ -1,7 +1,7 @@
 import { Cloud, Clouds as DreiClouds } from "@react-three/drei";
 import { useControls } from "leva";
 import { useEffect, useRef } from "react";
-import { AmbientLight, Group, MeshBasicMaterial } from "three";
+import { Group, MeshBasicMaterial } from "three";
 
 export const Clouds = () => {
   const clouds = useRef<Group>(null);

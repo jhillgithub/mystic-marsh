@@ -1,8 +1,8 @@
 import { useGrassMeshes } from "@hooks/useGrassMeshes";
 import { usePositions } from "@hooks/usePositions";
 import { useTexture } from "@react-three/drei";
-import { useMemo, useRef } from "react";
-import { InstancedMesh, MeshStandardMaterial, RepeatWrapping } from "three";
+import { useMemo } from "react";
+import { MeshStandardMaterial, RepeatWrapping } from "three";
 import { GrassInstancedMesh } from "./GrassInstancedMesh";
 
 export const Grass = () => {

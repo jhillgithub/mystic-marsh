@@ -1,23 +1,32 @@
-import Noise from "noisejs";
 import { Vector3 } from "three";
-const noise = new Noise(Math.random());
+import Perlin from "./perlin";
 
-export const degreesToRadians = (degrees: number) => degrees * (Math.PI / 180);
+// Seed value is optional, default is 0.
+const seed = Math.random();
+const noise = new Perlin(seed);
 
-export const randomBetween = (min: number, max: number) =>
-  Math.random() * (max - min) + min;
+export const degreesToRadians = (degrees: number) => {
+  return degrees * (Math.PI / 180);
+};
+
+export const randomBetween = (min: number, max: number) => {
+  return Math.random() * (max - min) + min;
+};
 
 /**https://en.wikipedia.org/wiki/Linear_congruential_generator */
 export class LCG {
   private seed: number;
   /**@NOTE default values below are common for this
    * and can be found on the table in the wikipedia link */
-  private modulus = 2 ** 32;
-  private multiplier = 1664525;
-  private increment = 1013904223;
+  private modulus: number;
+  private multiplier: number;
+  private increment: number;
 
   constructor(seed: number) {
     this.seed = seed;
+    this.modulus = 2 ** 32;
+    this.multiplier = 1664525;
+    this.increment = 1013904223;
   }
 
   random() {
