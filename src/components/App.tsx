@@ -9,7 +9,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import Experience from "./Experience";
 import { SphereEnvironment } from "./SphereEnvironment";
-
+import { Stats } from "@react-three/drei";
 const App = () => {
   return (
     <>
@@ -39,6 +39,7 @@ const App = () => {
           background={false}
           files={"textures/envmap.hdr"}
         />
+        <Stats />
       </Canvas>
     </>
   );
