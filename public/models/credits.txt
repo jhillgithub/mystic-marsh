@@ -12,3 +12,5 @@ Author: DigitalLife3D (https://sketchfab.com/DigitalLife3D)
 License: CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
 Source: https://sketchfab.com/3d-models/model-64a-eastern-painted-turtle-154214dec4c14e959e975aa8d17b1578
 Title: Model 64A - Eastern Painted Turtle
+
+[Grass Medium By Rico Cilliers and Rob Tuytel from polyhaven.com](https://polyhaven.com/a/grass_medium_01)
