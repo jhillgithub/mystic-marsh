@@ -14,7 +14,7 @@
     <a href="https://github.com/jhillgithub/mystic-marsh"><strong>Explore the repo »</strong></a>
     <br />
     <br />
-    <a href="https://mystic-marsh.vercel.app/">View Demo</a>
+    <a href="https://mystic-marsh.netlify.app/">View Demo</a>
     ·
     <a href="https://github.com/jhillgithub/mystic-marsh/issues">Report Bug</a>
     ·
