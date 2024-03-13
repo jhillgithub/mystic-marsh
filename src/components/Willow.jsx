@@ -26,9 +26,9 @@ export function Willow(props) {
       if (object.isMesh && object.name.includes("leaves")) {
         let rotation = calculateWindRotation(object.id, elapsedTime);
         object.rotation.set(
-          0.2 * rotation.x,
-          0.2 * rotation.y,
-          0.2 * rotation.z
+          0.1 * rotation.x,
+          0.1 * rotation.y,
+          0.1 * rotation.z
         );
       }
     });
