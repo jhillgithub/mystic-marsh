@@ -10,7 +10,9 @@ const ANIMATION_MAX_DELAY = 200;
 
 export function Fish(props) {
   const group = useRef();
-  const { scene, materials, animations } = useGLTF("/models/fish.glb");
+  const { scene, materials, animations } = useGLTF(
+    "/models/fish-transformed.glb"
+  );
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes } = useGraph(clone);
   const { actions, names } = useAnimations(animations, group);
@@ -78,31 +80,19 @@ export function Fish(props) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
-        <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
-          <group name="root">
-            <group name="GLTF_SceneRootNode" rotation={[Math.PI / 2, 0, 0]}>
-              <group name="Armature_34">
-                <group name="GLTF_created_0">
-                  <primitive object={nodes.GLTF_created_0_rootJoint} />
-                  <group name="body_mesh_32" />
-                  <group name="eye_mesh_33" />
-                  <skinnedMesh
-                    name="Object_7"
-                    geometry={nodes.Object_7.geometry}
-                    material={materials.Material}
-                    skeleton={nodes.Object_7.skeleton}
-                  />
-                  <skinnedMesh
-                    name="Object_9"
-                    geometry={nodes.Object_9.geometry}
-                    material={materials.Material}
-                    skeleton={nodes.Object_9.skeleton}
-                  />
-                </group>
-              </group>
-            </group>
-          </group>
-        </group>
+        <primitive object={nodes.GLTF_created_0_rootJoint} />
+        <skinnedMesh
+          name="Object_7"
+          geometry={nodes.Object_7.geometry}
+          material={materials.Material}
+          skeleton={nodes.Object_7.skeleton}
+        />
+        <skinnedMesh
+          name="Object_9"
+          geometry={nodes.Object_9.geometry}
+          material={materials.Material}
+          skeleton={nodes.Object_9.skeleton}
+        />
       </group>
     </group>
   );

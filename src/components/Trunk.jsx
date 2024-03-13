@@ -2,7 +2,7 @@ import { useGLTF } from "@react-three/drei";
 import { useMemo } from "react";
 
 export function Trunk(props) {
-  const { scene, nodes, materials } = useGLTF("/models/trunk.glb");
+  const { scene, nodes, materials } = useGLTF("/models/trunk-transformed.glb");
   useMemo(() => {
     scene.traverse((object) => {
       if (object.isMesh) {
@@ -22,4 +22,4 @@ export function Trunk(props) {
   );
 }
 
-useGLTF.preload("/models/trunk.glb");
+useGLTF.preload("/models/trunk-transformed.glb");

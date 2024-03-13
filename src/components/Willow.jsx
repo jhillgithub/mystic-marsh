@@ -6,7 +6,7 @@ import { SkeletonUtils } from "three-stdlib";
 
 export function Willow(props) {
   const ref = useRef();
-  const { scene, materials } = useGLTF("/models/willow.glb");
+  const { scene, materials } = useGLTF("/models/willow-transformed.glb");
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes } = useGraph(clone);
   useMemo(() => {
@@ -26,9 +26,9 @@ export function Willow(props) {
       if (object.isMesh && object.name.includes("leaves")) {
         let rotation = calculateWindRotation(object.id, elapsedTime);
         object.rotation.set(
-          0.1 * rotation.x,
-          0.1 * rotation.y,
-          0.1 * rotation.z
+          0.2 * rotation.x,
+          0.2 * rotation.y,
+          0.2 * rotation.z
         );
       }
     });
@@ -36,61 +36,15 @@ export function Willow(props) {
 
   return (
     <group {...props} dispose={null}>
-      <group name="a29d8c7d8d40462d8808967e772b0766fbx" scale={0.01}>
-        <group
-          ref={ref}
-          name="tree"
-          rotation={[-Math.PI / 2, 0, 0]}
-          scale={100}
-        >
+      <group name="a29d8c7d8d40462d8808967e772b0766fbx" scale={1}>
+        <group ref={ref} name="tree" rotation={[-Math.PI / 2, 0, 0]}>
           <mesh
-            name="tree_Malzeme010_0"
             geometry={nodes.tree_Malzeme010_0.geometry}
-            material={materials["Malzeme.010"]}
-          />
-          <mesh
-            name="tree_Malzeme010_0_1"
-            geometry={nodes.tree_Malzeme010_0_1.geometry}
-            material={materials["Malzeme.010"]}
-          />
-          <mesh
-            name="tree_Malzeme010_0_2"
-            geometry={nodes.tree_Malzeme010_0_2.geometry}
             material={materials["Malzeme.010"]}
           />
           <mesh
             name="leaves_Malzeme009_0"
             geometry={nodes.leaves_Malzeme009_0.geometry}
-            material={materials["Malzeme.009"]}
-          />
-          <mesh
-            name="leaves_Malzeme009_0_1"
-            geometry={nodes.leaves_Malzeme009_0_1.geometry}
-            material={materials["Malzeme.009"]}
-          />
-          <mesh
-            name="leaves_Malzeme009_0_2"
-            geometry={nodes.leaves_Malzeme009_0_2.geometry}
-            material={materials["Malzeme.009"]}
-          />
-          <mesh
-            name="leaves_Malzeme009_0_3"
-            geometry={nodes.leaves_Malzeme009_0_3.geometry}
-            material={materials["Malzeme.009"]}
-          />
-          <mesh
-            name="leaves_Malzeme009_0_4"
-            geometry={nodes.leaves_Malzeme009_0_4.geometry}
-            material={materials["Malzeme.009"]}
-          />
-          <mesh
-            name="leaves_Malzeme009_0_5"
-            geometry={nodes.leaves_Malzeme009_0_5.geometry}
-            material={materials["Malzeme.009"]}
-          />
-          <mesh
-            name="leaves_Malzeme009_0_6"
-            geometry={nodes.leaves_Malzeme009_0_6.geometry}
             material={materials["Malzeme.009"]}
           />
         </group>
@@ -99,4 +53,4 @@ export function Willow(props) {
   );
 }
 
-useGLTF.preload("/models/willow.glb");
+useGLTF.preload("/models/willow-transformed.glb");
